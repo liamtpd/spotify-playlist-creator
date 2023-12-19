@@ -17,7 +17,6 @@ Track.propTypes = {
         name: PropTypes.string.isRequired,
         artist: PropTypes.string.isRequired,
         album: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired
     }),
 };
 

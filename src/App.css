@@ -1,4 +1,9 @@
 /* Main app styles */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   display: flex; /* flexbox for layout */
   flex-direction: column; /* stacks children vertically, children: `.searchbar` & `.add-remove` */
