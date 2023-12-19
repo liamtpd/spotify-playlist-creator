@@ -1,5 +1,5 @@
 const clientId = '9f877a7812474280a7e656e6da47b335';
-const redirectUri = 'https://grand-snickerdoodle-769768.netlify.app/';
+const redirectUri = 'https://spotify-playlist-creator-liamtpd.netlify.app/';
 let accessToken;
 
 const Spotify = {
