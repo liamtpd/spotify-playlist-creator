@@ -68,4 +68,12 @@ html, body {
   .results-section, .playlist-section {
     width: 100%; /* Each section takes full width of the parent on small screens */
   }
+
+  .results-section {
+    margin-bottom: 10px;
+  }
+
+  .playlist-section {
+    margin-top: 10px;
+  }
 }
