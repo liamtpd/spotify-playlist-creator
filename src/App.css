@@ -1,38 +1,66 @@
+/* Main app styles */
 .App {
-  text-align: center;
+  display: flex; /* flexbox for layout */
+  flex-direction: column; /* stacks children vertically, children: `.searchbar` & `.add-remove` */
+  align-items: center; /* centers children horizontally */
+  padding: 20px; /* adds some space inside the borders of the app */
+  box-sizing: border-box; /* includes padding and border in the width and height */
+  height: 100vh; /* makes app full height of the viewport */
+  background-image: url("./green-studio.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* fixes the background image */
+  overflow-y: auto; /* ensures the content can scroll over the fixed background */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-header {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  margin-bottom: 75px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* styling for the section containing `SearchBar` */
+.searchbar-section {
+  width: 100%; /* % of width this container takes of the viewport */
+  display: flex; /* flexbox for layout */
+  justify-content: center; /* centers `SearchBar` horizontally */
+  margin-bottom: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* styling for the overall container containing `SearchResults` & `Playlist` */
+.add-remove-sections {
+  display: flex; /* flexbox for layout */
+  justify-content: space-between; /* indicates space between the children containers */
+  width: 90%; /* % of width this container takes of the viewport */
+}
+
+/* styling for each of the `SearchResults` & `Playlist` containers, the children of `add-remove` */
+.results-section, .playlist-section {
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+  padding: 10px; /* padding inside of semi-transparent boxes, between the track items and borders */
+  border-radius: 5px; /* used to round the corners of the boxes */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white; /* text color */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.results-section {
+  width: 50%; /* % of the `add-remove` container that `.results` takes up */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.playlist-section {
+  width: 45%; /* % of the `add-remove` container that `.playlist` takes up */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .add-remove-sections {
+    flex-direction: column; /* Stack children vertically on smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .results-section, .playlist-section {
+    width: 100%; /* Each section takes full width of the parent on small screens */
   }
 }

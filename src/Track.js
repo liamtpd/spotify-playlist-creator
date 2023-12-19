@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Track.css';
 
 const Track = ({ track }) => {
     return (
-        <div>
-            <h3>{track.name}</h3>
-            <p>{track.artist}</p>
-            <p>{track.album}</p>
+        <div className="track-component">
+            <h5>{track.name}</h5>
+            <p>{track.artist} | {track.album}</p>
         </div>
     );
 };
@@ -17,6 +17,7 @@ Track.propTypes = {
         name: PropTypes.string.isRequired,
         artist: PropTypes.string.isRequired,
         album: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired
     }),
 };
 

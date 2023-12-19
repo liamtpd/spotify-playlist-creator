@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 import Playlist from './Playlist';
 import Spotify from './util/Spotify';
+import './App.css';
 
 function App() {
   const [ results, setResults ] = useState([]);
@@ -50,16 +51,27 @@ function App() {
   };
 
   return (
-    <div>
-      <SearchBar onSearch={performSearch} />
-      <SearchResults results={results} onAdd={addTrackToPlaylist} /> {/*`sampleData` will be replaced later with the dynamic data received from the API call. */}
-      <Playlist 
-        playlist={playlist} 
-        onRemove={removeTrackFromPlaylist} 
-        onNameChange={handlePlaylistNameChange}
-        onSave={savePlaylist}
-        playlistName={playlistName} 
-      />
+    <div className="App">
+      <div className="app-header">
+        <h1>Spotify Playlist Creator</h1>
+      </div>
+      <div className="searchbar-section">
+        <SearchBar onSearch={performSearch} />
+      </div>
+      <div className="add-remove-sections">
+        <div className="results-section">
+          <SearchResults results={results} onAdd={addTrackToPlaylist} /> 
+        </div>
+        <div className="playlist-section">
+          <Playlist 
+            playlist={playlist} 
+            onRemove={removeTrackFromPlaylist} 
+            onNameChange={handlePlaylistNameChange}
+            onSave={savePlaylist}
+            playlistName={playlistName} 
+          />
+        </div>
+      </div>
     </div>
   );
 }
