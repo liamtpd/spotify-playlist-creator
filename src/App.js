@@ -3,12 +3,14 @@ import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 import Playlist from './Playlist';
 import Spotify from './util/Spotify';
+import Alert from './Alert';
 import './App.css';
 
 function App() {
   const [ results, setResults ] = useState([]);
   const [ playlist, setPlaylist ] = useState([]);
   const [ playlistName, setPlaylistName] = useState("");
+  const [ alert, setAlert ] = useState({ visible: false, message: "" });
 
   const performSearch = (userInput) => {
     Spotify.getAccessToken(); // Access Token needed
@@ -31,6 +33,7 @@ function App() {
     if (trackToAdd) {
       const playlistTrack ={ ...trackToAdd, uniqueId: Date.now() + trackId };
       setPlaylist(prevPlaylist => [...prevPlaylist, playlistTrack]);
+      showAlert("Track has been added to playlist");
     }
   };
   
@@ -43,11 +46,17 @@ function App() {
     Spotify.savePlaylist(playlistName, trackUris).then(() => { // handles saving of playlist to Spotify
       setPlaylist([]); // reset `playlist` to initial state
       setPlaylistName(""); // reset `playlistName` to initial state
+      showAlert("Playlist has been added to your Spotify account");
     });
   };
 
   const handlePlaylistNameChange = (name) => {
     setPlaylistName(name);
+  };
+
+  const showAlert = (message) => {
+    setAlert({ visible: true, message });
+    setTimeout(() => setAlert({ visible: false, message: "" }), 3000); // hides after 3 secs
   };
 
   return (
@@ -72,6 +81,7 @@ function App() {
           />
         </div>
       </div>
+      {alert.visible && <Alert message={alert.message}/>}
     </div>
   );
 }
