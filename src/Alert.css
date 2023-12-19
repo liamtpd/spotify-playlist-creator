@@ -1,0 +1,7 @@
+.alert {
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+    padding: 10px; /* padding inside of semi-transparent boxes, between the track items and borders */
+    border-radius: 5px; /* used to round the corners of the boxes */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white; /* text color */
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Alert.css';
 
 const Alert = ({ message }) => {
     return (
