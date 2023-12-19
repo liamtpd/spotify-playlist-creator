@@ -1,0 +1,37 @@
+.search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-field {
+    cursor: pointer; /* turns cursor from regular to pointing hand */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    color: white; /* text colour */
+    font-size: 28px;
+    padding: 5px; /* padding to space out text from border */
+    margin-bottom: 20px;
+}
+
+.search-field:focus { /* use of `:focus` appendage addresses when element is active/clicked on */
+    outline: none; /* eliminates the white & blue outline from element when active */
+}
+
+.search-field::placeholder { /* the `::` is used to access the `placeholder` property of `search-field` */
+    color: white;
+    opacity: 1; /* scale of 0.0 - 1.0, the lower the value the more transparent */
+}
+
+.search-button {
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: transparent;
+    border-style: double;
+    border-color: white;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+}

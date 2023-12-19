@@ -1,0 +1,53 @@
+.playlist-component ul {
+    padding: 0; /* removes default padding */
+}
+
+.playlist-component .playlist-track-item {
+    display: flex; /* aligns track info and `remove-track-button` in a row */
+}
+
+.playlist-component .remove-track-button {
+    margin-left: auto; /* pushes the `remove-track-button` to the right side of the container */
+}
+
+.playlist-component input {
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    color: white;
+    font-size: 24px;
+    padding: 5px 0; /* padding to space out text from border, 1st value = top & bottom, 2nd value = left & right */
+}
+
+.playlist-component input:focus { /* use of `:focus` appendage addresses when element is active/clicked on */
+    outline: none; /* eliminates the white & blue outline from element when active */
+}
+
+.playlist-component input::placeholder { /* the `::` is used to access the `placeholder` property of the `<input>` */
+    color: white;
+    opacity: 0.5; /* scale of 0.0 - 1.0, the lower the value the more transparent */
+}
+
+.remove-track-button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    color: white;
+    font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.save-playlist-button {
+    align-self: center; /* not working */
+    cursor: pointer;
+    background: transparent;
+    border-style: double;
+    border-color: white;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

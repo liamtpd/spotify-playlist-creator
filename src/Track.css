@@ -1,0 +1,12 @@
+.track-component {
+    width: 100%;
+    border-bottom: 1px solid #ffffff;
+}
+
+.track-component h5 {
+    margin-bottom: 0;
+}
+
+.track-component p {
+    margin-top: 0;
+}
